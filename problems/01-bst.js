@@ -89,7 +89,6 @@ class BST {
     }
 }
 
-startRoot = startRoot;
 
 
 module.exports = {
