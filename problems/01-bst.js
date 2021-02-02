@@ -32,13 +32,33 @@ class BST {
                 this.insert(val, currentNode.right)
             }
         }
-        // try implementing iterative solution (with while loop)
-            
+        // try implementing iterative solution (with while loop)     
     }
 
     // Perform a recursive search through the binary search tree
     searchRecur(val, currentNode=this.root) {
-        // Your code here
+        if (currentNode === null) {
+            return false
+        }   else if (currentNode === val) {
+            return true
+        }
+        if (currentNode > val) {
+            if (!currentNode.left) {
+                return false
+            } else {
+                this.searchRecur(val, currentNode.left)
+            }
+        } else {
+            if (!currentNode.right) {
+                return false;
+            } else {
+                this.searchRecur(val, currentNode.right) 
+            }
+        }
+
+        // if (currentNode !== val && (!currentNode.left) && (!currentNode.right)) {
+        //     return false
+        // }
     }
 
     // Perform an iterative search through the binary search tree
