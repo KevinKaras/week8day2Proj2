@@ -39,20 +39,20 @@ class BST {
     searchRecur(val, currentNode=this.root) {
         if (currentNode === null) {
             return false
-        }   else if (currentNode === val) {
+        }   else if (currentNode.val === val) {
             return true
         }
-        if (currentNode > val) {
+        if (val < currentNode.val) {
             if (!currentNode.left) {
                 return false
             } else {
-                this.searchRecur(val, currentNode.left)
+                return this.searchRecur(val, currentNode.left)
             }
         } else {
             if (!currentNode.right) {
                 return false;
             } else {
-                this.searchRecur(val, currentNode.right) 
+                return this.searchRecur(val, currentNode.right) 
             }
         }
 
