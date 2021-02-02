@@ -60,12 +60,37 @@ class BST {
         //     return false
         // }
     }
-
+    // startRoot // startRoot.left // startRoot.left.left
     // Perform an iterative search through the binary search tree
     searchIter(val) {
-        // Your code here
+       let startRoot = this.root;
+       
+        if (!startRoot){
+            return false;
+        } else {
+            while (startRoot.val !== val){       
+                if(val < startRoot.val){
+                    if(startRoot.left){
+                        startRoot = startRoot.left;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    if(startRoot.right){
+                        startRoot = startRoot.right;
+                    } else {
+                      return false;  
+                    }
+                }
+
+            }
+            return true;
+        }
     }
 }
+
+startRoot = startRoot;
+
 
 module.exports = {
     TreeNode,
