@@ -55,10 +55,6 @@ class BST {
                 return this.searchRecur(val, currentNode.right) 
             }
         }
-
-        // if (currentNode !== val && (!currentNode.left) && (!currentNode.right)) {
-        //     return false
-        // }
     }
     // startRoot // startRoot.left // startRoot.left.left
     // Perform an iterative search through the binary search tree
@@ -67,25 +63,23 @@ class BST {
        
         if (!startRoot){
             return false;
-        } else {
-            while (startRoot.val !== val){       
-                if(val < startRoot.val){
-                    if(startRoot.left){
-                        startRoot = startRoot.left;
-                    } else {
-                        return false;
-                    }
-                } else {
-                    if(startRoot.right){
-                        startRoot = startRoot.right;
-                    } else {
-                      return false;  
-                    }
-                }
-
-            }
-            return true;
         }
+        while (startRoot.val !== val) {       
+            if (val < startRoot.val) {
+                if (startRoot.left) {
+                    startRoot = startRoot.left;
+                } else {
+                    return false;
+                }
+            } else {
+                if (startRoot.right) {
+                    startRoot = startRoot.right;
+                } else {
+                    return false;  
+                }
+            }
+        }
+        return true;
     }
 }
 
